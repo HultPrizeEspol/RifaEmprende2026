@@ -75,7 +75,7 @@
 
 body {
     /* Reemplaza la URL de abajo por el link de tu imagen */
-    background-image: url('playita.png'); 
+    background-image: url('final.webp'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Esto hace que el fondo no se mueva al bajar */
