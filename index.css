@@ -1,7 +1,9 @@
+html, body {background-color: #01694f;margin: 0;padding: 0; min-height: 100vh;}
 .beach-grid { display: grid;grid-template-columns: repeat(10, 1fr);
-    gap: 15px;padding: 30px;contain: layout style; }
+    gap: 15px;padding: 30px;contain: layout style;min-height: 100vh; }
 @media (min-width: 1024px) { .number-card {  backdrop-filter: blur(8px); }}
-@media (max-width: 600px) { .beach-grid {     grid-template-columns: repeat(5, 1fr);} }
+@media (max-width: 600px) { .beach-grid { padding: 10px;grid-template-columns: repeat(5, 1fr);gap: 6px;}
+    .number-card { font-size: 0.9rem;border-radius: 8px;} }
 .number-card.eliminated {pointer-events: none; transition: all 0.5s ease-out;}
 .number-card { aspect-ratio: 1 / 1; background: rgba(255, 255, 255, 0.15);backdrop-filter:none; 
     border: 2px solid rgba(255, 255, 255, 0.1);border-radius: 15px; display: flex;align-items: center;justify-content: center;
@@ -16,3 +18,4 @@
     display: flex;align-items: center;justify-content: center;opacity: 1;transition: opacity 0.3s;}
 body { background: linear-gradient(180deg, #00c6ff 0%, #0072ff 50%, #049e78 100%);
     background-attachment: fixed;min-height: 100vh;margin: 0;}
+@media (max-width: 600px) { header { padding-top: 20px !important; padding-bottom: 5px !important; }header h1 { font-size: 2.5rem;}}

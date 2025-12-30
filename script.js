@@ -19,8 +19,13 @@ window.cargarMasNumeros = async () => {
         const card = crearUnCuadro(i); grid.appendChild(card);
         setTimeout(() => { verificarNumero(i);}, (i - cargados) * 10); }   cargados = limite;};
 document.addEventListener('DOMContentLoaded', () => { cargarMasNumeros();});
-window.onscroll = () => { if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 1000) {
-    if (cargados < TOTAL_NUMEROS) {  window.cargarMasNumeros(); } }};
+window.onscroll = () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 600) {
+        if (cargados < TOTAL_NUMEROS) {
+            window.cargarMasNumeros();
+        }
+    }
+};
 window.consultarEstado = async (numero) => {
     const docRef = doc(db, "rifa", numero.toString()); const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
