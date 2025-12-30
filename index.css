@@ -1,97 +1,25 @@
-.number-card.occupied {
-    border: 3px solid #ffd700; /* Dorado */
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-    filter: saturate(1.2);
-}
-
-/* Configuración de la cuadrícula */
-.beach-grid {
-    display: grid;
-    /* Esto obliga a que siempre haya 10 columnas del mismo ancho */
-    grid-template-columns: repeat(10, 1fr); 
-    gap: 8px; /* Reduje un poco el espacio para que quepan mejor */
-    padding: 15px;
-}
-
+.beach-grid { display: grid;grid-template-columns: repeat(10, 1fr);
+    gap: 15px;padding: 30px;contain: layout style; }
 @media (max-width: 600px) {
-    .beach-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
+.beach-grid {     grid-template-columns: repeat(5, 1fr);} }
 .number-card.eliminated {
-    pointer-events: none;
-    transition: all 0.5s ease-out;
-}
-
-/* Diseño de cada cuadro (transparente) */
-.number-card {
-    aspect-ratio: 1 / 1;
-    background: rgba(255, 255, 255, 0.15); /* Transparencia blanca */
-    backdrop-filter: blur(8px); /* Efecto de vidrio esmerilado */
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor: pointer;
+    pointer-events: none; transition: all 0.5s ease-out;}
+.number-card { aspect-ratio: 1 / 1;
+    background: rgba(255, 255, 255, 0.15);backdrop-filter: blur(8px); 
+    border: 2px solid rgba(255, 255, 255, 0.3);border-radius: 15px;
+    display: flex;align-items: center;justify-content: center;
+    color: white;font-weight: bold;font-size: 1.2rem;cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    user-select: none;
-}
-
-/* Animación cuando pasas el mouse (se alza) */
+    position: relative;overflow: hidden;user-select: none;}
 .number-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
-/* Estilo para números ya comprados */
-.number-card.occupied {
-    border: 3px solid #ffd700; /* Borde dorado */
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    background-size: cover;
-    background-position: center;
-}
-
-/* Texto que aparece sobre la foto en números ocupados */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    transition: opacity 0.3s;
-}
-
+    transform: translateY(-5px) scale(1.05);background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;}
+.number-card { will-change: transform;   contain: content; }
+.number-card.occupied { border: 3px solid #dba100;box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    background-size: cover;background-position: center;}
+.overlay { position: absolute;inset: 0;background: rgba(0, 0, 0, 0.4);
+    display: flex;align-items: center;justify-content: center;opacity: 1;transition: opacity 0.3s;}
 body {
-    /* Reemplaza la URL de abajo por el link de tu imagen */
-    background-image: url('final.webp'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Esto hace que el fondo no se mueva al bajar */
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Opcional: Capa oscura para que los números resalten más sobre la imagen */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
+    background: linear-gradient(180deg, #00c6ff 0%, #0072ff 50%, #049e78 100%);
+    background-attachment: fixed;min-height: 100vh;margin: 0;}
