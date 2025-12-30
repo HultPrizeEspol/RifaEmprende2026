@@ -1,4 +1,4 @@
-html, body {background-color: #01694f;margin: 0;padding: 0; min-height: 100vh;}
+html, body {background-color: #049e78;margin: 0;padding: 0; min-height: 100vh;}
 .beach-grid { display: grid;grid-template-columns: repeat(10, 1fr);
     gap: 15px;padding: 30px;contain: layout style;min-height: 100vh; }
 @media (min-width: 1024px) { .number-card {  backdrop-filter: blur(8px); }}
